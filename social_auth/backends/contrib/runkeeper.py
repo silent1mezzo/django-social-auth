@@ -2,7 +2,7 @@
 Run Keeper OAuth2 support.
 
 This contribution adds support for Run Keeper OAuth2 service. The settings
-RUNKEEPER_APP_ID and RUNKEEPER_API_SECRET must be defined with the values
+RUNKEEPER_CLIENT_ID and RUNKEEPER_CLIENT_SECRET must be defined with the values
 given by Flickr application registration process.
 
 By default account id, username and token expiration time are stored in
@@ -50,8 +50,8 @@ class RunKeeperAuth(ConsumerBasedOAuth):
     ACCESS_TOKEN_URL = RUNKEEPER_ACCESS_TOKEN_URL
     SERVER_URL = RUNKEEPER_SERVER
     AUTH_BACKEND = RunKeeperBackend
-    SETTINGS_KEY_NAME = 'RUNKEEPER_APP_ID'
-    SETTINGS_SECRET_NAME = 'RUNKEEPER_API_SECRET'
+    SETTINGS_KEY_NAME = 'RUNKEEPER_CLIENT_ID'
+    SETTINGS_SECRET_NAME = 'RUNKEEPER_CLIENT_SECRET'
 
     def access_token(self, token):
         """Return request for access token value"""
